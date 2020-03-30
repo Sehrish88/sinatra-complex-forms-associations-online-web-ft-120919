@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+require 'pry'
 
   get '/pets' do
     @pets = Pet.all
@@ -33,7 +34,7 @@ class PetsController < ApplicationController
 
 
   patch '/pets/:id' do 
-    #binding.pry 
+    binding.pry 
     @pet = Pet.find(params[:id])
     @pet.update(name: params[:pet][:name])
     @pet.owner.update(owner_name: params[:pet][:owner_name])
