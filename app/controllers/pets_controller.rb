@@ -39,6 +39,7 @@ require 'pry'
     @pet.update(name: params[:pet][:name])
     @pet.update(owner_id: params[:pet][:owner_id])
     if params[:owner][:name]  !=""
+       @pet.owner = Owner.create(name: params[:owner][:name])
     redirect "/pets/#{@pet.id}"
   end
 end 
