@@ -34,7 +34,7 @@ require 'pry'
 
 
   patch '/pets/:id' do 
-    #binding.pry 
+    binding.pry 
     @pet = Pet.find(params[:id])
     @pet.update(name: params[:pet][:name])
     @pet.update(owner_id: params[:pet][:owner_id])
