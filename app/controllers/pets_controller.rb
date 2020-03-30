@@ -37,7 +37,7 @@ require 'pry'
     binding.pry 
     @pet = Pet.find(params[:id])
     @pet.update(name: params[:pet][:name])
-    @pet.owner.update(owner_name: params[:pet][:owner_name])
+    @pet.update(owner_id: params[:pet][:owner_id])
     redirect "/pets/#{@pet.id}"
   end
 end 
