@@ -38,7 +38,7 @@ require 'pry'
     @pet = Pet.find(params[:id])
     @pet.update(name: params[:pet][:name])
     @pet.update(owner_id: params[:pet][:owner_id])
-    if 
+    if params[:owner][:name]  !=""
     redirect "/pets/#{@pet.id}"
   end
 end 
